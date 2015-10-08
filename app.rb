@@ -11,9 +11,9 @@ get "/" do
   erb :index
 end
 
-get "/users/create" do
+get "/users/new" do
   User.create(
-    first_name: "Orlando",
+    first_name: "Orlando-#{Time.now}",
     last_name: "Caraballo",
     birthday: "12/1/1983"
   )
