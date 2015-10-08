@@ -7,14 +7,20 @@ configure :development do
 end
 
 get "/" do
+  "Welcome to my site on the web bros!"
+end
+
+get "/users" do
   @users = User.all
   erb :index
 end
 
 get "/users/new" do
-  User.create(
+  @user = User.create(
     first_name: "Orlando-#{Time.now}",
     last_name: "Caraballo",
     birthday: "12/1/1983"
   )
+
+  "New user has been created."
 end
